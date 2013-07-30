@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#wrapper{
+				width: 800px;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+
+			label, input{
+				display: block;
+				margin: 5px;
+			}
+
+			.wrap-input{
+				float: left;
+				margin-right: 30px;
+				border: solid 1px;
+				padding: 18px;
+				height: 135px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="wrapper">
+			<div class="wrap-input">
+				<label for="decimal">Ingresa un numero en decimal</label>
+				<input type="text" id="decimal">
+				<button id="decimalToBinary">Convert to binary</button>
+				<p id="resultBinary"></p>
+			</div>
+			
+			<div class="wrap-input">
+				<label for="decimal">Ingresa un numero en binario</label>
+				<input type="text" id="binary">
+				<button id="binaryToDecimal">Convert to decimal</button>
+				<p id="resultDecimal"></p>
+
+			</div>
+		</div>
+
+
+	<script>
+
+		window.onload = function(){
+			var resultBinary = document.getElementById("resultBinary");
+			var resultDecimal = document.getElementById("resultDecimal");
+
+			document.getElementById("decimalToBinary").addEventListener("click", function(e){
+				var decimal = parseInt(document.getElementById("decimal").value);
+				if(!isNaN(decimal)){
+					var binary = decimal.toString(2);
+					resultBinary.innerHTML = binary;
+				}
+				
+			});
+
+			document.getElementById("binaryToDecimal").addEventListener("click", function(e){
+				var binary = parseInt(document.getElementById("binary").value, 2);
+				console.log(binary)
+				if(!isNaN(binary)){
+					var decimal = binary.toString(10);
+					resultDecimal.innerHTML = decimal;
+				}
+				
+			});
+		}
+
+		
+	
+	
+	</script>
+	
+	</body>
+</html>
+

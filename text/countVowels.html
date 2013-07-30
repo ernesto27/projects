@@ -1,0 +1,42 @@
+<script>
+	function countVowel(string){
+		var vowels = ["a","e","i","o","u"],
+			count = 0,
+			len =  string.length,
+			finds = [];
+		;
+
+		for( var i=0; i < len; i++ ){
+			if(vowels.indexOf(string[i]) != -1){
+				finds.push(string[i])
+				count++;
+			}
+		}
+
+		var vowelsObj = {
+			a: 0,
+			e: 0,
+			i: 0,
+			o: 0,
+			u: 0
+		}
+
+		for( var j=0; j < finds.length ; j++ ){
+			for( var index in vowelsObj ){
+				if(index === finds[j]){
+					vowelsObj[index]++;		
+				}
+			}
+		}
+
+		for( var index in vowelsObj ){
+			if(vowelsObj[index] !== 0){
+				console.log("found " + vowelsObj[index] + " times the word " + index );
+			}
+		}
+
+		return count; 
+	}
+
+	console.log(countVowel("dream theater"));
+</script>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+      h1{
+        font-family: Arial;
+        color: #8B8B8B;
+        margin-top: 2px;
+        margin-bottom: -10px;
+      }
+
+      .single-post a{
+        color: #407E96;
+        text-decoration: none;
+        font-family: Tahoma;
+        font-size: 0.9em;
+        font-weight: bold;
+        text-shadow: 2px 3px 4px #BDBDBD;
+      }
+
+      .single-post a:hover{
+        text-decoration: underline;
+      }
+
+      /*
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }*/
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+
+    <h1>Nettus latest post</h1>
+    <p><img src="http://a3.twimg.com/profile_images/83206541/icon_nettuts_normal.png"></p>
+    <div id="post-wrap">
+      <img src="loading.gif" style="display:none" id="loading">
+      
+    </div>
+
+    <script>
+      /*var wrap = document.getElementById("post-wrap");
+
+      var div = document.createElement("div");
+      var title = document.createElement("p");
+      title.innerHTML = "this is a test";
+      var link = document.createElement("a");
+      link.href ="fddfafs";
+      link.innerText = "im a link";
+
+      wrap.appendChild(div);
+      div.appendChild(title);
+      div.appendChild(link);*/
+    </script>
+
+    <script src="js/jquery.js"></script>
+    <script src="getRss.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+

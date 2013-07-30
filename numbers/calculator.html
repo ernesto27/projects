@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#wrapper{
+				width: 800px;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+
+			#calculator{
+				width: 350px;
+				margin-top: 10px;
+				background: #85E8EC;
+			}
+
+			.number{
+				width: 70px;
+				height: 58px;
+				background: #CBF8FF;
+				float: left;
+				margin: 20px;
+				font-weight: 2em;
+				font-size: 3em;
+				text-align: center;
+				font-weight: bold;
+				font-family: Arial;
+				color: #0D4853;
+			}
+
+			.number:hover{
+				cursor: pointer;
+			}
+
+			#operator{
+				clear: both;
+			}
+
+			#operator button{
+				margin-left: 20px;
+				width: 55px;
+				font-size: 1.5em;
+				text-align: center;
+				font-weight: bold;
+				height: 45px;
+			}
+
+			#result{	
+				margin-left: 20px;
+				width: 84%;
+				padding: 7px;
+				margin-top: 14px;
+				font-weight: bold;
+				font-size: 1.4em;	
+				color: #555;
+			
+			}
+
+			#viewResult{
+				text-align: center;
+				margin-bottom: 50px;
+			}
+
+			#showCalc{
+				overflow: scroll;
+				margin-left: 20px;
+				background: #ECECEC;
+				padding: 10px;
+				margin-top: -1px;
+				clear: both;
+				text-align: center;
+				width: 76%;
+				font-size: 1.8em;
+				font-family: sans-serif;
+				border: inset 3px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			
+			<div id="calculator">
+				<div id="showCalc">
+				</div>
+				
+				<div id="wrapNumbers">
+					<div class="number">7</div>
+					<div class="number">8</div>
+					<div class="number">9</div>
+
+					<div class="number">4</div>
+					<div class="number">5</div>
+					<div class="number">6</div>
+
+					<div class="number">1</div>
+					<div class="number">2</div>
+					<div class="number">3</div>
+				</div>
+
+				<div id="operator">
+					<button>+</button>
+					<button>-</button>
+					<button>*</button>
+					<button>/</button>
+				</div>
+
+				<button id="result">Result</button>
+
+				<div id="viewResult"><h1>100</h1></div>
+
+			</div>
+		</div>
+
+		<script>
+			var number = document.getElementById("wrapNumbers");
+			var showCalc = document.getElementById("showCalc");
+			var operators = document.getElementById("operator");
+			var result = document.getElementById("result");
+			var viewResult = document.getElementById("viewResult");
+			var current = [];
+
+			function getNumber(){
+				number.addEventListener("click", function(e){
+					console.log(e.target)
+					var number = e.target.innerHTML;
+					
+					current.push(number);
+					updateViewNumbers(number);
+					
+				}, false);
+			}
+
+			function getOperator(){
+				operators.addEventListener("click", function(e){
+					console.log(e.target)
+					var operator = e.target.innerHTML;
+					console.log(operator)
+					current.push(operator);
+					updateViewNumbers(operator);
+				}, false);
+			}
+
+			function updateViewNumbers(num){
+				showCalc.appendChild(document.createTextNode(num));
+			}
+
+			function getResult(){
+				result.addEventListener("click", function(e){
+					//console.log(showCalc.innerHTML)
+					console.log(current)
+				}, false);
+			}
+
+			function init(){
+				getNumber();
+				getOperator();
+				getResult();
+			}
+
+
+			init();
+
+			
+
+		</script>
+
+	</body>
+</html>

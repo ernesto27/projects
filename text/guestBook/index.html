@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+		<style>
+			#main{
+				margin-top: 15px;
+			}
+
+			.single-entry{
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding: 10px;
+				border: dotted 1px #A3A3A3;
+				font-family: Verdana;
+				color: #7E7E7E;
+				font-size: 0.9em;
+			}
+
+			.single-entry h4{
+				margin-top: 0;
+			}
+			.single-entry .date-entry{
+				font-size: 0.7em;
+			}
+
+			.single-entry .delete, .edit{
+				float: right;
+				margin-right: 7px;
+			}
+
+			#wrapper-add, #wrapper-edit{
+				margin-top: 30px;
+				margin-bottom: 15px;
+			}
+
+			#wrapper-add  input, #wrapper-edit input{
+				width: 100%;
+			}
+
+			#wrapper-add textarea, #wrapper-edit textarea{
+				width: 100%;
+				height: 300px;
+				overflow: auto;
+				display: block;
+			}
+
+			#wrapper-edit{
+				display: none;
+			}
+
+			
+		</style>
+	
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="main" >
+
+				<div  class="span8">
+					<h1>My thoughts </h1>
+					<hr>
+
+					<div id="entries-wrap"></div>
+
+					<div id="wrapper-add">
+						<h3>Add thougts</h3>
+						<form>
+							<label for="title">Title</label>
+							<input type="text" name="" id="title">
+							<label>Content</label>
+							<textarea name="" id="content" cols="30" rows="10"></textarea>
+							<button class="btn btn-primary" id="addThought">Agregar</button>
+						</form>
+					</div>
+
+					<div id="wrapper-edit">
+						<h3>Edit thougts</h3>
+						<form>
+							<label for="title">Title</label>
+							<input type="text" name="" id="title-edit">
+							<label>Content</label>
+							<textarea name="" id="content-edit" cols="30" rows="10"></textarea>
+							<button class="btn btn-primary" id="editThrougt">Editar</button>
+							<button class="btn btn-inverse" id="cancelEdit">Cancel</button>
+						</form>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
